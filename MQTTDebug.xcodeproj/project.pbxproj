@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4EBFE81B2ADAA48B005AB4DE /* MQTTDebugApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFE81A2ADAA48B005AB4DE /* MQTTDebugApp.swift */; };
+		4EBFE81D2ADAA48B005AB4DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFE81C2ADAA48B005AB4DE /* ContentView.swift */; };
+		4EBFE81F2ADAA48D005AB4DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EBFE81E2ADAA48D005AB4DE /* Assets.xcassets */; };
+		4EBFE8222ADAA48D005AB4DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EBFE8212ADAA48D005AB4DE /* Preview Assets.xcassets */; };
+		4EBFE82C2ADAA48D005AB4DE /* MQTTDebugTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFE82B2ADAA48D005AB4DE /* MQTTDebugTests.swift */; };
+		4EBFE8362ADAA48D005AB4DE /* MQTTDebugUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFE8352ADAA48D005AB4DE /* MQTTDebugUITests.swift */; };
+		4EBFE8382ADAA48D005AB4DE /* MQTTDebugUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFE8372ADAA48D005AB4DE /* MQTTDebugUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4EBFE8282ADAA48D005AB4DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EBFE80F2ADAA48B005AB4DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EBFE8162ADAA48B005AB4DE;
+			remoteInfo = MQTTDebug;
+		};
+		4EBFE8322ADAA48D005AB4DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EBFE80F2ADAA48B005AB4DE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EBFE8162ADAA48B005AB4DE;
+			remoteInfo = MQTTDebug;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4EBFE8172ADAA48B005AB4DE /* MQTTDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MQTTDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EBFE81A2ADAA48B005AB4DE /* MQTTDebugApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTDebugApp.swift; sourceTree = "<group>"; };
+		4EBFE81C2ADAA48B005AB4DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4EBFE81E2ADAA48D005AB4DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4EBFE8212ADAA48D005AB4DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4EBFE8272ADAA48D005AB4DE /* MQTTDebugTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MQTTDebugTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EBFE82B2ADAA48D005AB4DE /* MQTTDebugTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTDebugTests.swift; sourceTree = "<group>"; };
+		4EBFE8312ADAA48D005AB4DE /* MQTTDebugUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MQTTDebugUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EBFE8352ADAA48D005AB4DE /* MQTTDebugUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTDebugUITests.swift; sourceTree = "<group>"; };
+		4EBFE8372ADAA48D005AB4DE /* MQTTDebugUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTDebugUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4EBFE8142ADAA48B005AB4DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EBFE8242ADAA48D005AB4DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EBFE82E2ADAA48D005AB4DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4EBFE80E2ADAA48B005AB4DE = {
+			isa = PBXGroup;
+			children = (
+				4EBFE8192ADAA48B005AB4DE /* MQTTDebug */,
+				4EBFE82A2ADAA48D005AB4DE /* MQTTDebugTests */,
+				4EBFE8342ADAA48D005AB4DE /* MQTTDebugUITests */,
+				4EBFE8182ADAA48B005AB4DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4EBFE8182ADAA48B005AB4DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4EBFE8172ADAA48B005AB4DE /* MQTTDebug.app */,
+				4EBFE8272ADAA48D005AB4DE /* MQTTDebugTests.xctest */,
+				4EBFE8312ADAA48D005AB4DE /* MQTTDebugUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4EBFE8192ADAA48B005AB4DE /* MQTTDebug */ = {
+			isa = PBXGroup;
+			children = (
+				4EBFE81A2ADAA48B005AB4DE /* MQTTDebugApp.swift */,
+				4EBFE81C2ADAA48B005AB4DE /* ContentView.swift */,
+				4EBFE81E2ADAA48D005AB4DE /* Assets.xcassets */,
+				4EBFE8202ADAA48D005AB4DE /* Preview Content */,
+			);
+			path = MQTTDebug;
+			sourceTree = "<group>";
+		};
+		4EBFE8202ADAA48D005AB4DE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4EBFE8212ADAA48D005AB4DE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4EBFE82A2ADAA48D005AB4DE /* MQTTDebugTests */ = {
+			isa = PBXGroup;
+			children = (
+				4EBFE82B2ADAA48D005AB4DE /* MQTTDebugTests.swift */,
+			);
+			path = MQTTDebugTests;
+			sourceTree = "<group>";
+		};
+		4EBFE8342ADAA48D005AB4DE /* MQTTDebugUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4EBFE8352ADAA48D005AB4DE /* MQTTDebugUITests.swift */,
+				4EBFE8372ADAA48D005AB4DE /* MQTTDebugUITestsLaunchTests.swift */,
+			);
+			path = MQTTDebugUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4EBFE8162ADAA48B005AB4DE /* MQTTDebug */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EBFE83B2ADAA48D005AB4DE /* Build configuration list for PBXNativeTarget "MQTTDebug" */;
+			buildPhases = (
+				4EBFE8132ADAA48B005AB4DE /* Sources */,
+				4EBFE8142ADAA48B005AB4DE /* Frameworks */,
+				4EBFE8152ADAA48B005AB4DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MQTTDebug;
+			productName = MQTTDebug;
+			productReference = 4EBFE8172ADAA48B005AB4DE /* MQTTDebug.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4EBFE8262ADAA48D005AB4DE /* MQTTDebugTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EBFE83E2ADAA48D005AB4DE /* Build configuration list for PBXNativeTarget "MQTTDebugTests" */;
+			buildPhases = (
+				4EBFE8232ADAA48D005AB4DE /* Sources */,
+				4EBFE8242ADAA48D005AB4DE /* Frameworks */,
+				4EBFE8252ADAA48D005AB4DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4EBFE8292ADAA48D005AB4DE /* PBXTargetDependency */,
+			);
+			name = MQTTDebugTests;
+			productName = MQTTDebugTests;
+			productReference = 4EBFE8272ADAA48D005AB4DE /* MQTTDebugTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4EBFE8302ADAA48D005AB4DE /* MQTTDebugUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EBFE8412ADAA48D005AB4DE /* Build configuration list for PBXNativeTarget "MQTTDebugUITests" */;
+			buildPhases = (
+				4EBFE82D2ADAA48D005AB4DE /* Sources */,
+				4EBFE82E2ADAA48D005AB4DE /* Frameworks */,
+				4EBFE82F2ADAA48D005AB4DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4EBFE8332ADAA48D005AB4DE /* PBXTargetDependency */,
+			);
+			name = MQTTDebugUITests;
+			productName = MQTTDebugUITests;
+			productReference = 4EBFE8312ADAA48D005AB4DE /* MQTTDebugUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4EBFE80F2ADAA48B005AB4DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					4EBFE8162ADAA48B005AB4DE = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					4EBFE8262ADAA48D005AB4DE = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 4EBFE8162ADAA48B005AB4DE;
+					};
+					4EBFE8302ADAA48D005AB4DE = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 4EBFE8162ADAA48B005AB4DE;
+					};
+				};
+			};
+			buildConfigurationList = 4EBFE8122ADAA48B005AB4DE /* Build configuration list for PBXProject "MQTTDebug" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4EBFE80E2ADAA48B005AB4DE;
+			productRefGroup = 4EBFE8182ADAA48B005AB4DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4EBFE8162ADAA48B005AB4DE /* MQTTDebug */,
+				4EBFE8262ADAA48D005AB4DE /* MQTTDebugTests */,
+				4EBFE8302ADAA48D005AB4DE /* MQTTDebugUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4EBFE8152ADAA48B005AB4DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EBFE8222ADAA48D005AB4DE /* Preview Assets.xcassets in Resources */,
+				4EBFE81F2ADAA48D005AB4DE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EBFE8252ADAA48D005AB4DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EBFE82F2ADAA48D005AB4DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4EBFE8132ADAA48B005AB4DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EBFE81D2ADAA48B005AB4DE /* ContentView.swift in Sources */,
+				4EBFE81B2ADAA48B005AB4DE /* MQTTDebugApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EBFE8232ADAA48D005AB4DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EBFE82C2ADAA48D005AB4DE /* MQTTDebugTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EBFE82D2ADAA48D005AB4DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EBFE8382ADAA48D005AB4DE /* MQTTDebugUITestsLaunchTests.swift in Sources */,
+				4EBFE8362ADAA48D005AB4DE /* MQTTDebugUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4EBFE8292ADAA48D005AB4DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4EBFE8162ADAA48B005AB4DE /* MQTTDebug */;
+			targetProxy = 4EBFE8282ADAA48D005AB4DE /* PBXContainerItemProxy */;
+		};
+		4EBFE8332ADAA48D005AB4DE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4EBFE8162ADAA48B005AB4DE /* MQTTDebug */;
+			targetProxy = 4EBFE8322ADAA48D005AB4DE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4EBFE8392ADAA48D005AB4DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4EBFE83A2ADAA48D005AB4DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4EBFE83C2ADAA48D005AB4DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MQTTDebug/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fhj.MQTTDebug;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4EBFE83D2ADAA48D005AB4DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MQTTDebug/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fhj.MQTTDebug;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4EBFE83F2ADAA48D005AB4DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fhj.MQTTDebugTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MQTTDebug.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MQTTDebug";
+			};
+			name = Debug;
+		};
+		4EBFE8402ADAA48D005AB4DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fhj.MQTTDebugTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MQTTDebug.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MQTTDebug";
+			};
+			name = Release;
+		};
+		4EBFE8422ADAA48D005AB4DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fhj.MQTTDebugUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MQTTDebug;
+			};
+			name = Debug;
+		};
+		4EBFE8432ADAA48D005AB4DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fhj.MQTTDebugUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MQTTDebug;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4EBFE8122ADAA48B005AB4DE /* Build configuration list for PBXProject "MQTTDebug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EBFE8392ADAA48D005AB4DE /* Debug */,
+				4EBFE83A2ADAA48D005AB4DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EBFE83B2ADAA48D005AB4DE /* Build configuration list for PBXNativeTarget "MQTTDebug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EBFE83C2ADAA48D005AB4DE /* Debug */,
+				4EBFE83D2ADAA48D005AB4DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EBFE83E2ADAA48D005AB4DE /* Build configuration list for PBXNativeTarget "MQTTDebugTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EBFE83F2ADAA48D005AB4DE /* Debug */,
+				4EBFE8402ADAA48D005AB4DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EBFE8412ADAA48D005AB4DE /* Build configuration list for PBXNativeTarget "MQTTDebugUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EBFE8422ADAA48D005AB4DE /* Debug */,
+				4EBFE8432ADAA48D005AB4DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4EBFE80F2ADAA48B005AB4DE /* Project object */;
+}
