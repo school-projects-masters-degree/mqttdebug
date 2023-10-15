@@ -37,7 +37,7 @@ Aldin Cimpo, Martin Brandl
 ---
 # Mockup
 
-![left:40% 80%](image.png)
+![left:40% 80%](./images/mockup.png)
 
 
 * Connection Status
