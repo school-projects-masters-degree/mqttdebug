@@ -9,7 +9,18 @@ import SwiftUI
 
 struct ConnectionStatusView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 0.0) {
+            Text("Broker 192.168.1.1")
+                .frame(maxWidth: .infinity)
+                .padding([.vertical], 5)
+                .background(Color("SecondColor"))
+            Text("Connected")
+                .frame(maxWidth: .infinity)
+                .padding([.vertical], 5)
+                .background(Color("ConnectedColor"))
+                .fontWeight(.semibold)
+            
+        }
     }
 }
 

@@ -9,7 +9,18 @@ import SwiftUI
 
 struct NavigationBarView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+               Text("MQTTDebug")
+                    .bold()
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    
+                    .background(Color.blue)
+            }
+            
+            
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 
