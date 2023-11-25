@@ -8,8 +8,11 @@
 import SwiftUI
 struct ContentView: View {
     
+    @StateObject private var mqttSettings = MQTTSettings()
+    @StateObject private var iotManager =  IoTManager(mqttSettings: MQTTSettings())
+    
     var body: some View {
-       UIWrapper()
+        UIWrapper()
     }
 }
 

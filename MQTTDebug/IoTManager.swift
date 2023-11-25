@@ -8,39 +8,84 @@
 import Foundation
 import CocoaMQTT
 
-class IoTManager: CocoaMQTTDelegate {
+class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
     
     var mqtt: CocoaMQTT!
+    @Published var mqttSettings: MQTTSettings
+    let clientID = "MQTTDebugger-" + String(ProcessInfo().processIdentifier)
     
-    init(clientID: String,
-         serverURL: String,
-         serverPort: UInt16 = 1883
-    ) {
-        
-        let clientID = "MQTTDebugger"
+    init(mqttSettings: MQTTSettings) {
+        self.mqttSettings = mqttSettings
+        super.init()
+        let clientID = clientID
         //let serverURL = "10.55.202.36"
-        let serverURL = "10.55.200.123"
-        let serverPort: UInt16 = 1883 // or the port specified by your IoT device
+        let serverURL = mqttSettings.brokerIP
+        guard (0...65535).contains(mqttSettings.portNumber) else {
+            mqttSettings.connectionError = "Invalid Port Number"
+            return
+        }
+        let serverPort = UInt16(mqttSettings.portNumber)
         
         mqtt = CocoaMQTT(clientID: clientID, host: serverURL, port: serverPort)
         mqtt.delegate = self
-        mqtt.username = "ben"
-        mqtt.password = "1234"
-        mqtt.allowUntrustCACertificate = true
+        //mqtt.username = "ben"
+        //mqtt.password = "1234"
+       // mqtt.allowUntrustCACertificate = true
         
-        mqtt.connect()
-        mqtt.subscribe("/*")
+        //mqtt.connect()
     }
     
+    // TODO: Trigger reconnect upon change
+    func configure(clientID: String, serverURL: String, serverPort: UInt16, username:String?, password: String?){
+        mqtt.host = serverURL
+        // Port is already validated, no need to check
+        
+        mqtt.port = serverPort
+        mqtt.username = username
+        mqtt.password = password
+    }
     
+    func connectToServer() {
+        guard !mqttSettings.brokerIP.isEmpty else {
+            mqttSettings.connectionError = "Broker IP is empty"
+            return
+        }
+     
+        guard (0...65535).contains(mqttSettings.portNumber) else {
+            mqttSettings.connectionError = "Invalid Port Number"
+            return
+        }
+        mqtt = CocoaMQTT(clientID: clientID, host: mqttSettings.brokerIP, port: UInt16(mqttSettings.portNumber))
+        mqtt.delegate = self
+        mqtt.username = mqttSettings.username
+        mqtt.password = mqttSettings.password
+        mqtt.subscribe(mqttSettings.topic)
+        mqtt.allowUntrustCACertificate = true
+        mqtt.connect()
+        }
+
+    func disconnect() {
+        mqtt.disconnect()
+        mqttSettings.isConnected = false
+        mqttSettings.connectionError = "Not Connected, Please check your settings."
+    }
+
     // MARK: - CocoaMQTTDelegate methods
     
     func mqtt(_ mqtt: CocoaMQTT, didConnectAck ack: CocoaMQTTConnAck) {
         if ack == .accept {
             print("Connected to the IoT device!")
-            // Perform actions after successful connection
+            mqttSettings.isConnected = true
+            mqttSettings.connectionError = nil
+            
+            // Delay Subscription
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                self.mqtt.subscribe(self.mqttSettings.topic)
+            }
         } else {
             print("Failed to connect to the IoT device")
+            mqttSettings.isConnected = false
+            mqttSettings.connectionError = "Failed to connect to the MQTT Broker"
         }
     }
     
@@ -48,34 +93,50 @@ class IoTManager: CocoaMQTTDelegate {
         print("Data published successfully")
     }
     
+    ///
+    func mqtt(_ mqtt: CocoaMQTT, didSubscribeTopics success: NSDictionary, failed: [String]) {
+        print("didSubscribeTopics")
+        print("Subscribed to topics \(self.mqttSettings.topic)")
+    }
+    
     func mqtt(_ mqtt: CocoaMQTT, didReceiveMessage message: CocoaMQTTMessage, id: UInt16) {
-        if let messageString = message.string {
+      if let messageString = message.string {
             print("Received message on topic \(message.topic): \(messageString)")
             // Process the received message
             
-            // TODO: Save messages persistentenantly
+            let mqttMessage = MQTTSettings.MQTTMessage(topic: message.topic, message: messageString, timestamp: Date()
+            )
             
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                self.mqttSettings.receivedMessages.append(mqttMessage)
+                print("Message appended: \(messageString)")
+            }
+            
+        } else {
+            print("Received a message but could not decode the string.")
         }
     }
-    
-    func mqtt(_ mqtt: CocoaMQTT, didDisconnectWithError error: Error?) {
-       if let error = error {
-           print("Disconnected from the IoT device with error: \(error.localizedDescription)")
-       } else {
-           print("Disconnected from the IoT device")
-       }
-   }
-    
     
     ///
     func mqtt(_ mqtt: CocoaMQTT, didPublishAck id: UInt16) {
         print("didPublish ACK")
     }
     
-    ///
-    func mqtt(_ mqtt: CocoaMQTT, didSubscribeTopics success: NSDictionary, failed: [String]) {
-        print("didSubscribeTopics")
-    }
+    func mqtt(_ mqtt: CocoaMQTT, didDisconnectWithError error: Error?) {
+       if let error = error {
+           print("Disconnected from the IoT device with error: \(error.localizedDescription)")
+           mqttSettings.connectionError = error.localizedDescription
+       } else {
+           print("Disconnected from the IoT device")
+           mqttSettings.connectionError = "Disconnected from the MQTT broker."
+       }
+        mqttSettings.isConnected = false
+   }
+    
+    
+   
+    
+    
     
     ///
     func mqtt(_ mqtt: CocoaMQTT, didUnsubscribeTopics topics: [String]) {
@@ -95,6 +156,7 @@ class IoTManager: CocoaMQTTDelegate {
     ///
     func mqttDidDisconnect(_ mqtt: CocoaMQTT, withError err: Error?) {
         print("Did Disconnect \(String(describing: err))")
+        mqttSettings.isConnected = false
     }
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		38709D4F7E2CB03C13BED9BA /* Pods_MQTTDebug_MQTTDebugUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C209A746B33E22B1A40297 /* Pods_MQTTDebug_MQTTDebugUITests.framework */; };
+		4E16B6102B05FA64005B8FCA /* MQTTSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E16B60F2B05FA64005B8FCA /* MQTTSettings.swift */; };
 		4E3958CC2AFFA6C900E0DC44 /* IoTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3958CB2AFFA6C900E0DC44 /* IoTManager.swift */; };
 		4E4EE1AB2AE3E243006FBE0A /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4EE1AA2AE3E243006FBE0A /* NavigationBarView.swift */; };
 		4E4EE1AD2AE3E2EC006FBE0A /* ConnectionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4EE1AC2AE3E2EC006FBE0A /* ConnectionStatusView.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		397F0456FB204C01649B653B /* Pods-MQTTDebug-MQTTDebugUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTTDebug-MQTTDebugUITests.debug.xcconfig"; path = "Target Support Files/Pods-MQTTDebug-MQTTDebugUITests/Pods-MQTTDebug-MQTTDebugUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4195B900C1BA28863BAE6B84 /* Pods-MQTTDebug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTTDebug.debug.xcconfig"; path = "Target Support Files/Pods-MQTTDebug/Pods-MQTTDebug.debug.xcconfig"; sourceTree = "<group>"; };
+		4E16B60F2B05FA64005B8FCA /* MQTTSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTSettings.swift; sourceTree = "<group>"; };
 		4E3958CB2AFFA6C900E0DC44 /* IoTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoTManager.swift; sourceTree = "<group>"; };
 		4E3958CD2AFFB11900E0DC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4E4EE1AA2AE3E243006FBE0A /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				4E4EE1B22AE3EB47006FBE0A /* SubscribedView.swift */,
 				4E4EE1B02AE3EB10006FBE0A /* SettingsView.swift */,
 				4E4EE1AE2AE3E8D4006FBE0A /* MessagesView.swift */,
+				4E16B60F2B05FA64005B8FCA /* MQTTSettings.swift */,
 				4E4EE1AC2AE3E2EC006FBE0A /* ConnectionStatusView.swift */,
 				4E4EE1AA2AE3E243006FBE0A /* NavigationBarView.swift */,
 				4EBFE81E2ADAA48D005AB4DE /* Assets.xcassets */,
@@ -432,6 +435,7 @@
 				4E4EE1B52AE3ED8B006FBE0A /* UIWrapper.swift in Sources */,
 				4E4EE1AD2AE3E2EC006FBE0A /* ConnectionStatusView.swift in Sources */,
 				4EBFE81D2ADAA48B005AB4DE /* ContentView.swift in Sources */,
+				4E16B6102B05FA64005B8FCA /* MQTTSettings.swift in Sources */,
 				4E4EE1B32AE3EB47006FBE0A /* SubscribedView.swift in Sources */,
 				4E4EE1B12AE3EB10006FBE0A /* SettingsView.swift in Sources */,
 				4E3958CC2AFFA6C900E0DC44 /* IoTManager.swift in Sources */,

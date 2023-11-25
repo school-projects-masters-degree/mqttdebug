@@ -8,22 +8,61 @@
 import SwiftUI
 
 struct ConnectionStatusView: View {
+    @ObservedObject var mqttSettings = MQTTSettings()
+    @ObservedObject var iotManager: IoTManager
+    
     var body: some View {
         VStack(spacing: 0.0) {
-            Text("Broker 192.168.1.1")
-                .frame(maxWidth: .infinity)
-                .padding([.vertical], 5)
-                .background(Color("SecondColor"))
-            Text("Connected")
-                .frame(maxWidth: .infinity)
-                .padding([.vertical], 5)
-                .background(Color("ConnectedColor"))
-                .fontWeight(.semibold)
+            
+            // Existing broker IP view
+            if !mqttSettings.brokerIP.isEmpty {
+                Text(mqttSettings.isConnected ? "Connected" : "Disconnected")
+                    .frame(maxWidth: .infinity)
+                    .padding([.vertical], 5)
+                    .background(mqttSettings.isConnected
+                                ? Color("ConnectedColor")
+                                : (mqttSettings.settingsChanged ? Color.orange
+                                   : Color("DisconnectedColor"))
+                    )
+                    .fontWeight(.semibold)
+                    .onChange(of: mqttSettings.settingsChanged) {
+                        print("Settings have changed. ")
+                        clearMessages()
+                        mqttSettings.isConnected = false
+                        
+                    }
+                    /*.onTapGesture {
+                        print("Tap gesture recognized")
+                        if mqttSettings.settingsChanged {
+                            print("Settings have changed. Attempting to reconnect...")
+                            
+                            iotManager.disconnect()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                iotManager.connectToServer()
+                            }
+                            mqttSettings.settingsChanged = false
+                        }
+                    }*/
+                /*
+                if mqttSettings.settingsChanged {
+                    Text("Settings Changed - Tap Here To Reconnect")
+                        .frame(maxWidth: .infinity)
+                        .padding([.vertical], 5)
+                        .foregroundColor(.white)
+                        .background(Color.orange)
+                        .fontWeight(.semibold)
+                }
+                 */
+            } else {
+                Text("Please update your settings")
+                    .frame(maxWidth: .infinity)
+                    .padding([.vertical], 5)
+                    .background(Color("SecondColor"))
+            }
             
         }
     }
-}
-
-#Preview {
-    ConnectionStatusView()
+    func clearMessages() -> Void {
+        mqttSettings.receivedMessages = []
+    }
 }
