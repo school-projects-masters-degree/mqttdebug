@@ -61,7 +61,11 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
         mqtt.password = mqttSettings.password
         mqtt.subscribe(mqttSettings.topic)
         mqtt.allowUntrustCACertificate = true
-        mqtt.connect()
+        let connectionSuccess = mqtt.connect()
+        if !connectionSuccess {
+            mqttSettings.connectionError = "Failed to initiate connection"
+            mqttSettings.isConnected = false
+        }
         }
 
     func disconnect() {
@@ -104,8 +108,8 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
             print("Received message on topic \(message.topic): \(messageString)")
             // Process the received message
             
-            let mqttMessage = MQTTSettings.MQTTMessage(topic: message.topic, message: messageString, timestamp: Date()
-            )
+          let mqttMessage = MQTTSettings.MQTTMessage(topic: message.topic, message: messageString, timestamp: Date(), isNew: true
+          )
             
             DispatchQueue.main.asyncAfter(deadline: .now()+1) {
                 self.mqttSettings.receivedMessages.append(mqttMessage)

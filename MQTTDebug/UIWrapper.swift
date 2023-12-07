@@ -30,7 +30,7 @@ struct UIWrapper: View {
         
             SettingsView(mqttSettings: mqttSettings)
             .tabItem { Label("Settings", systemImage: "gearshape.fill") }.tag(2)
-            SubscribedView().tabItem { Label("Favorites", systemImage: "bell.fill")
+            SubscribedView(mqttSettings: mqttSettings).tabItem { Label("Favorites", systemImage: "bell.fill")
                     
             }.tag(2)
                 
