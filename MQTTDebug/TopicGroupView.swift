@@ -61,6 +61,7 @@ struct TopicGroupView: View {
                     HStack {
                         Text(topic)
                             .fontWeight(.bold)
+                            .foregroundColor(borderColor)
                         Spacer()
                         Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
                     }
@@ -80,10 +81,10 @@ struct TopicGroupView: View {
             }
         }
         .padding()
-        .overlay(
+        /*.overlay(
             RoundedRectangle(cornerRadius: 16)
                 .stroke(borderColor, lineWidth: 4)
-        )
+        )*/
         .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
             currentDate = Date()  // Refresh the current date every second
         }
