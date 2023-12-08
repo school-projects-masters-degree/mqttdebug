@@ -13,7 +13,7 @@ struct UIWrapper: View {
     
     @State private var showAlert = false
     @State private var alertMessage = ""
-    
+    @State private var selectedTab = 1
     var body: some View {
         VStack(spacing: 0.0) {
             Text("MQTTDebugger")
@@ -24,7 +24,7 @@ struct UIWrapper: View {
                 .background(Color("MainColor"))
             ConnectionStatusView(mqttSettings: mqttSettings, iotManager: iotManager)
         }
-        TabView(selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Selection@*/.constant(1)/*@END_MENU_TOKEN@*/) {
+        TabView(selection: $selectedTab) {
             MessagesView(mqttSettings: mqttSettings).tabItem { Label( "home", systemImage: "house")
                 .foregroundColor(Color("DarkIcons")).fontWeight(.bold) }.tag(1)
         
@@ -32,7 +32,7 @@ struct UIWrapper: View {
             .tabItem { Label("Settings", systemImage: "gearshape.fill") }.tag(2)
             SubscribedView(mqttSettings: mqttSettings).tabItem { Label("Favorites", systemImage: "bell.fill")
                     
-            }.tag(2)
+            }.tag(3)
                 
 
         }

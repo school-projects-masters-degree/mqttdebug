@@ -45,12 +45,12 @@ struct TopicGroupView: View {
             HStack {
                 // Star (Favorite) Button
                 Button(action: {
-                    // Assuming there's logic to handle topic-wise favorites
                     mqttSettings.toggleFavoriteStatusForTopic(topic)
                 }) {
                     Image(systemName: isTopicFavorite(topic) ? "star.fill" : "star")
                         .foregroundColor(isTopicFavorite(topic) ? .yellow : .gray)
                 }
+
                 
                 // Fixing double toggle bug
                 .buttonStyle(PlainButtonStyle())

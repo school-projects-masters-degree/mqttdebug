@@ -23,6 +23,7 @@
 		4EBFE82C2ADAA48D005AB4DE /* MQTTDebugTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFE82B2ADAA48D005AB4DE /* MQTTDebugTests.swift */; };
 		4EBFE8362ADAA48D005AB4DE /* MQTTDebugUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFE8352ADAA48D005AB4DE /* MQTTDebugUITests.swift */; };
 		4EBFE8382ADAA48D005AB4DE /* MQTTDebugUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFE8372ADAA48D005AB4DE /* MQTTDebugUITestsLaunchTests.swift */; };
+		4EFF960E2B21F460002ADFE5 /* TopicGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF960D2B21F460002ADFE5 /* TopicGroupView.swift */; };
 		767FEE0FF6B97FEA866C5083 /* Pods_MQTTDebug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C360D04A4AEEE00B2C07EBC2 /* Pods_MQTTDebug.framework */; };
 		B7650ECA0B565187C113F17D /* Pods_MQTTDebugTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C298AAD40F6306E585995D53 /* Pods_MQTTDebugTests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		4EBFE8312ADAA48D005AB4DE /* MQTTDebugUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MQTTDebugUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EBFE8352ADAA48D005AB4DE /* MQTTDebugUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTDebugUITests.swift; sourceTree = "<group>"; };
 		4EBFE8372ADAA48D005AB4DE /* MQTTDebugUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTDebugUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4EFF960D2B21F460002ADFE5 /* TopicGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicGroupView.swift; sourceTree = "<group>"; };
 		66C209A746B33E22B1A40297 /* Pods_MQTTDebug_MQTTDebugUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MQTTDebug_MQTTDebugUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A15B0141D59A32C15752271 /* Pods-MQTTDebugTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTTDebugTests.debug.xcconfig"; path = "Target Support Files/Pods-MQTTDebugTests/Pods-MQTTDebugTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B926F5506CAC089AA01E0E06 /* Pods-MQTTDebugTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTTDebugTests.release.xcconfig"; path = "Target Support Files/Pods-MQTTDebugTests/Pods-MQTTDebugTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		4EBFE8192ADAA48B005AB4DE /* MQTTDebug */ = {
 			isa = PBXGroup;
 			children = (
+				4EFF960D2B21F460002ADFE5 /* TopicGroupView.swift */,
 				4E3958CD2AFFB11900E0DC44 /* Info.plist */,
 				4EBFE81A2ADAA48B005AB4DE /* MQTTDebugApp.swift */,
 				4EBFE81C2ADAA48B005AB4DE /* ContentView.swift */,
@@ -433,6 +436,7 @@
 			files = (
 				4E4EE1AF2AE3E8D4006FBE0A /* MessagesView.swift in Sources */,
 				4E4EE1B52AE3ED8B006FBE0A /* UIWrapper.swift in Sources */,
+				4EFF960E2B21F460002ADFE5 /* TopicGroupView.swift in Sources */,
 				4E4EE1AD2AE3E2EC006FBE0A /* ConnectionStatusView.swift in Sources */,
 				4EBFE81D2ADAA48B005AB4DE /* ContentView.swift in Sources */,
 				4E16B6102B05FA64005B8FCA /* MQTTSettings.swift in Sources */,

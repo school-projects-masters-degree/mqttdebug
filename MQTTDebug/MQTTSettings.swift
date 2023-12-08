@@ -22,7 +22,7 @@ class MQTTSettings: ObservableObject {
     @Published var favoriteTopics: Set<String> = []
     
     private let favoritesKey = "FavoriteTopics"
-    
+    private var favoriteMessages: [MQTTSettings.MQTTMessage] = []
     init() {
         loadFavoriteMessages()
     }
@@ -51,7 +51,7 @@ class MQTTSettings: ObservableObject {
     
     
     func saveFavoriteMessages() {
-        let favoriteMessages = receivedMessages.filter { $0.isFavorite }
+        favoriteMessages = receivedMessages.filter { $0.isFavorite }
         if let encoded = try? JSONEncoder().encode(favoriteMessages) {
             UserDefaults.standard.set(encoded, forKey: favoritedMessagesKey)
         }
@@ -64,13 +64,6 @@ class MQTTSettings: ObservableObject {
             receivedMessages = savedMessages
         }
     }
-    
-    func toggleFavoriteStatus(of message: MQTTMessage) {
-            if let index = receivedMessages.firstIndex(where: { $0.id == message.id }) {
-                receivedMessages[index].isFavorite.toggle()
-                saveFavoriteMessages()
-            }
-        }
     
     func toggleFavoriteStatusForTopic(_ topic: String) {
         for i in 0..<receivedMessages.count {
