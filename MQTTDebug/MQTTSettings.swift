@@ -11,7 +11,7 @@ class MQTTSettings: ObservableObject {
     
     @Published var receivedMessages: [MQTTMessage] = []
     
-    @Published var brokerIP: String = "192.168.8.159"
+    @Published var brokerIP: String = "10.55.200.204"
     @Published var portNumber: Int = 1883 // Default port
     @Published var username: String = ""
     @Published var password: String = ""
@@ -20,9 +20,9 @@ class MQTTSettings: ObservableObject {
     @Published var connectionError: String?
     @Published var settingsChanged = false
     @Published var favoriteTopics: Set<String> = []
-    
+    @Published var favoriteMessages: [MQTTSettings.MQTTMessage] = []
+
     private let favoritesKey = "FavoriteTopics"
-    private var favoriteMessages: [MQTTSettings.MQTTMessage] = []
     init() {
         loadFavoriteMessages()
     }
@@ -55,14 +55,22 @@ class MQTTSettings: ObservableObject {
         if let encoded = try? JSONEncoder().encode(favoriteMessages) {
             UserDefaults.standard.set(encoded, forKey: favoritedMessagesKey)
         }
+        print("Saving favorite messages: \(favoriteMessages.count)")
     }
     
     func loadFavoriteMessages() {
         if let data = UserDefaults.standard.data(forKey: favoritedMessagesKey),
            let savedMessages = try? JSONDecoder().decode([MQTTMessage].self, from: data) {
+            print("Found data for favorite messages")
+
             // Merge with existing messages or replace, as per your logic
+            favoriteMessages = savedMessages
             receivedMessages = savedMessages
+            print("Loaded favorite messages: \(favoriteMessages.count)")
+        } else {
+            print("No data found")
         }
+
     }
     
     func toggleFavoriteStatusForTopic(_ topic: String) {
@@ -73,6 +81,21 @@ class MQTTSettings: ObservableObject {
         }
         
         saveFavoriteMessages()
+        print("Toggled favorite status for topic: \(topic)")
+        saveFavoriteMessages()
+
+    }
+    
+    // Fix the Favorites Tab Duplicate Bug
+    func synchronizeFavoriteMessages() {
+        // Load from UserDefaults first
+        loadFavoriteMessages()
+        // Now update receivedMessages with favorite status
+        for (index, message) in receivedMessages.enumerated() {
+            if favoriteMessages.contains(where: { $0.id == message.id }) {
+                receivedMessages[index].isFavorite = true
+            }
+        }
     }
     
 }

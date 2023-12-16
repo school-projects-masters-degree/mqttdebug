@@ -73,6 +73,8 @@ struct MessagesView: View {
         }
     }
     private func connectToServer() {
+        print("Attempting to connect to server")
+
         if mqttSettings.settingsChanged {
             iotManager.disconnect()
             iotManager.connectToServer()
@@ -88,6 +90,7 @@ struct MessagesView: View {
                 connectionMessage = ""
             }
         }
+
     }
     
     private func toggleFavoriteStatus(of message: MQTTSettings.MQTTMessage) {
@@ -95,6 +98,8 @@ struct MessagesView: View {
             mqttSettings.receivedMessages[index].isFavorite.toggle()
             mqttSettings.saveFavoriteMessages()
         }
+        print("Toggled favorite status for message: \(message.id)")
+
     }
     
 }

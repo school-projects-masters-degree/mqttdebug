@@ -33,5 +33,9 @@ struct SubscribedView: View {
                 mqttSettings.receivedMessages.remove(at: globalIndex)
             }
         }
+        // Update favoriteMessages array and save to UserDefaults
+        mqttSettings.favoriteMessages = mqttSettings.receivedMessages.filter { $0.isFavorite }
+        mqttSettings.saveFavoriteMessages()
+        print("Deleting message from topic: \(topic)")
     }
 }

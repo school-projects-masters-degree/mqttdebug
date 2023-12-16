@@ -72,6 +72,7 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
         mqtt.disconnect()
         mqttSettings.isConnected = false
         mqttSettings.connectionError = "Not Connected, Please check your settings."
+        mqttSettings.saveFavoriteMessages()
     }
 
     // MARK: - CocoaMQTTDelegate methods
@@ -81,7 +82,7 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
             print("Connected to the IoT device!")
             mqttSettings.isConnected = true
             mqttSettings.connectionError = nil
-            
+            mqttSettings.synchronizeFavoriteMessages()
             // Delay Subscription
             DispatchQueue.main.asyncAfter(deadline: .now()+1) {
                 self.mqtt.subscribe(self.mqttSettings.topic)
@@ -91,6 +92,7 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
             mqttSettings.isConnected = false
             mqttSettings.connectionError = "Failed to connect to the MQTT Broker"
         }
+
     }
     
     func mqtt(_ mqtt: CocoaMQTT, didPublishMessage message: CocoaMQTTMessage, id: UInt16) {
