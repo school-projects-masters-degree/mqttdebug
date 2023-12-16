@@ -21,6 +21,14 @@ class MQTTSettings: ObservableObject {
     @Published var settingsChanged = false
     @Published var favoriteTopics: Set<String> = []
     @Published var favoriteMessages: [MQTTSettings.MQTTMessage] = []
+    
+    var isFavoriteTabVisible: Bool {
+            return !favoriteMessages.isEmpty
+    }
+
+    
+    // Fixing the Favorite Tab with this closure
+    var onFavoritesChanged: (() -> Void)?
 
     private let favoritesKey = "FavoriteTopics"
     init() {
@@ -56,6 +64,8 @@ class MQTTSettings: ObservableObject {
             UserDefaults.standard.set(encoded, forKey: favoritedMessagesKey)
         }
         print("Saving favorite messages: \(favoriteMessages.count)")
+        
+        onFavoritesChanged?()
     }
     
     func loadFavoriteMessages() {
@@ -66,7 +76,7 @@ class MQTTSettings: ObservableObject {
             // Merge with existing messages or replace, as per your logic
             favoriteMessages = savedMessages
             receivedMessages = savedMessages
-            print("Loaded favorite messages: \(favoriteMessages.count)")
+           
         } else {
             print("No data found")
         }

@@ -13,7 +13,6 @@ struct MessagesView: View {
     @StateObject private var iotManager: IoTManager
     @State private var connectionMessage: String = ""
     
-    
     private var groupedMessages: [String: [MQTTSettings.MQTTMessage]] {
         let sortedMessages = mqttSettings.receivedMessages.sorted { $0.timestamp > $1.timestamp }
         let truncatedMessages = sortedMessages.map { message -> MQTTSettings.MQTTMessage in
