@@ -30,7 +30,7 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
         mqtt.delegate = self
         //mqtt.username = "ben"
         //mqtt.password = "1234"
-       // mqtt.allowUntrustCACertificate = true
+        // mqtt.allowUntrustCACertificate = true
         
         //mqtt.connect()
     }
@@ -50,7 +50,7 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
             mqttSettings.connectionError = "Broker IP is empty"
             return
         }
-     
+        
         guard (0...65535).contains(mqttSettings.portNumber) else {
             mqttSettings.connectionError = "Invalid Port Number"
             return
@@ -66,15 +66,15 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
             mqttSettings.connectionError = "Failed to initiate connection"
             mqttSettings.isConnected = false
         }
-        }
-
+    }
+    
     func disconnect() {
         mqtt.disconnect()
         mqttSettings.isConnected = false
         mqttSettings.connectionError = "Not Connected, Please check your settings."
         mqttSettings.saveFavoriteMessages()
     }
-
+    
     // MARK: - CocoaMQTTDelegate methods
     
     func mqtt(_ mqtt: CocoaMQTT, didConnectAck ack: CocoaMQTTConnAck) {
@@ -92,7 +92,7 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
             mqttSettings.isConnected = false
             mqttSettings.connectionError = "Failed to connect to the MQTT Broker"
         }
-
+        
     }
     
     func mqtt(_ mqtt: CocoaMQTT, didPublishMessage message: CocoaMQTTMessage, id: UInt16) {
@@ -106,20 +106,14 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
     }
     
     func mqtt(_ mqtt: CocoaMQTT, didReceiveMessage message: CocoaMQTTMessage, id: UInt16) {
-      if let messageString = message.string {
-            print("Received message on topic \(message.topic): \(messageString)")
-            // Process the received message
-            
-          let mqttMessage = MQTTSettings.MQTTMessage(topic: message.topic, message: messageString, timestamp: Date(), isNew: true
-          )
-            
-            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-                self.mqttSettings.receivedMessages.append(mqttMessage)
-                print("Message appended: \(messageString)")
+        Task {
+            if let messageString = message.string {
+                let mqttMessage = MQTTSettings.MQTTMessage(topic: message.topic, message: messageString, timestamp: Date(), isNew: true)
+                
+                await MainActor.run {
+                    self.mqttSettings.addMessage(mqttMessage)
+                }
             }
-            
-        } else {
-            print("Received a message but could not decode the string.")
         }
     }
     
@@ -129,18 +123,18 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
     }
     
     func mqtt(_ mqtt: CocoaMQTT, didDisconnectWithError error: Error?) {
-       if let error = error {
-           print("Disconnected from the IoT device with error: \(error.localizedDescription)")
-           mqttSettings.connectionError = error.localizedDescription
-       } else {
-           print("Disconnected from the IoT device")
-           mqttSettings.connectionError = "Disconnected from the MQTT broker."
-       }
+        if let error = error {
+            print("Disconnected from the IoT device with error: \(error.localizedDescription)")
+            mqttSettings.connectionError = error.localizedDescription
+        } else {
+            print("Disconnected from the IoT device")
+            mqttSettings.connectionError = "Disconnected from the MQTT broker."
+        }
         mqttSettings.isConnected = false
-   }
+    }
     
     
-   
+    
     
     
     
@@ -170,7 +164,7 @@ extension IoTManager {
     func subscribeToTopic(topic: String) {
         mqtt.subscribe(topic)
     }
-
+    
     func publishData(topic: String, message: String) {
         mqtt.publish(topic, withString: message, qos: .qos1)
     }

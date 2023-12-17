@@ -23,14 +23,15 @@ class MQTTSettings: ObservableObject {
     @Published var favoriteMessages: [MQTTSettings.MQTTMessage] = []
     
     var isFavoriteTabVisible: Bool {
-            return !favoriteMessages.isEmpty
+        return !favoriteMessages.isEmpty
     }
-
+    
     
     // Fixing the Favorite Tab with this closure
     var onFavoritesChanged: (() -> Void)?
-
+    
     private let favoritesKey = "FavoriteTopics"
+    private let MAX_MESSAGE_COUNT = 20
     init() {
         loadFavoriteMessages()
     }
@@ -72,15 +73,15 @@ class MQTTSettings: ObservableObject {
         if let data = UserDefaults.standard.data(forKey: favoritedMessagesKey),
            let savedMessages = try? JSONDecoder().decode([MQTTMessage].self, from: data) {
             print("Found data for favorite messages")
-
+            
             // Merge with existing messages or replace, as per your logic
             favoriteMessages = savedMessages
             receivedMessages = savedMessages
-           
+            
         } else {
             print("No data found")
         }
-
+        
     }
     
     func toggleFavoriteStatusForTopic(_ topic: String) {
@@ -93,7 +94,7 @@ class MQTTSettings: ObservableObject {
         saveFavoriteMessages()
         print("Toggled favorite status for topic: \(topic)")
         saveFavoriteMessages()
-
+        
     }
     
     // Fix the Favorites Tab Duplicate Bug
@@ -105,6 +106,14 @@ class MQTTSettings: ObservableObject {
             if favoriteMessages.contains(where: { $0.id == message.id }) {
                 receivedMessages[index].isFavorite = true
             }
+        }
+    }
+    
+    func addMessage(_ message: MQTTMessage) {
+        receivedMessages.append(message)
+        
+        if receivedMessages.count > MAX_MESSAGE_COUNT {
+            receivedMessages.removeFirst()
         }
     }
     
