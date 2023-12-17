@@ -78,8 +78,8 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
     // MARK: - CocoaMQTTDelegate methods
     
     func mqtt(_ mqtt: CocoaMQTT, didConnectAck ack: CocoaMQTTConnAck) {
-        if ack == .accept {
-            print("Connected to the IoT device!")
+        switch ack {
+        case .accept:
             mqttSettings.isConnected = true
             mqttSettings.connectionError = nil
             mqttSettings.synchronizeFavoriteMessages()
@@ -87,12 +87,15 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
             DispatchQueue.main.asyncAfter(deadline: .now()+1) {
                 self.mqtt.subscribe(self.mqttSettings.topic)
             }
-        } else {
-            print("Failed to connect to the IoT device")
+            
+        case .notAuthorized:
             mqttSettings.isConnected = false
-            mqttSettings.connectionError = "Failed to connect to the MQTT Broker"
+            mqttSettings.connectionError = "Invalid username or password."
+            
+        default:
+            mqttSettings.isConnected = false
+            mqttSettings.connectionError = "Failed to connect: \(ack)"
         }
-        
     }
     
     func mqtt(_ mqtt: CocoaMQTT, didPublishMessage message: CocoaMQTTMessage, id: UInt16) {
