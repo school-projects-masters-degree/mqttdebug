@@ -46,6 +46,37 @@ Aldin Cimpo, Martin Brandl
 
 ---
 
+
+---
+
+# Launch mqtt with password 
+tested on macOS
+
+```bash
+mqtt_passwd -c passwd.txt username
+```
+
+nvim /opt/homebrew/etc/mosquitto/mosquitto.conf
+
+```bash
+allow_anonymous false
+listener 1883
+
+password_file /Users/alsjourney/Desktop/passwd.txt 
+```
+
+launch directly or as service
+```bash
+mosquitto -c /opt/homebrew/etc/mosquitto/mosquitto.conf
+
+brew services start mosquitto
+```
+
+edit file here
+
+
+---
+
 # References
 * https://github.com/school-projects-masters-degree/mqttdebug
 
