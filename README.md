@@ -53,7 +53,7 @@ Aldin Cimpo, Martin Brandl
 tested on macOS
 
 ```bash
-mqtt_passwd -c passwd.txt username
+mosquitto_passwd -c passwd.txt username
 ```
 
 nvim /opt/homebrew/etc/mosquitto/mosquitto.conf
