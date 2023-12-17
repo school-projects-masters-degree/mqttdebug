@@ -16,6 +16,7 @@
 		4E4EE1B12AE3EB10006FBE0A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4EE1B02AE3EB10006FBE0A /* SettingsView.swift */; };
 		4E4EE1B32AE3EB47006FBE0A /* SubscribedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4EE1B22AE3EB47006FBE0A /* SubscribedView.swift */; };
 		4E4EE1B52AE3ED8B006FBE0A /* UIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4EE1B42AE3ED8B006FBE0A /* UIWrapper.swift */; };
+		4E7D9B6C2B2EF23000C1F402 /* iOSCheckBoxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D9B6B2B2EF23000C1F402 /* iOSCheckBoxToggleStyle.swift */; };
 		4EBFE81B2ADAA48B005AB4DE /* MQTTDebugApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFE81A2ADAA48B005AB4DE /* MQTTDebugApp.swift */; };
 		4EBFE81D2ADAA48B005AB4DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFE81C2ADAA48B005AB4DE /* ContentView.swift */; };
 		4EBFE81F2ADAA48D005AB4DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EBFE81E2ADAA48D005AB4DE /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		4E4EE1B02AE3EB10006FBE0A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4E4EE1B22AE3EB47006FBE0A /* SubscribedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribedView.swift; sourceTree = "<group>"; };
 		4E4EE1B42AE3ED8B006FBE0A /* UIWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWrapper.swift; sourceTree = "<group>"; };
+		4E7D9B6B2B2EF23000C1F402 /* iOSCheckBoxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSCheckBoxToggleStyle.swift; sourceTree = "<group>"; };
 		4EBFE8172ADAA48B005AB4DE /* MQTTDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MQTTDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EBFE81A2ADAA48B005AB4DE /* MQTTDebugApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTDebugApp.swift; sourceTree = "<group>"; };
 		4EBFE81C2ADAA48B005AB4DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				4EBFE81E2ADAA48D005AB4DE /* Assets.xcassets */,
 				4EBFE8202ADAA48D005AB4DE /* Preview Content */,
 				4E3958CB2AFFA6C900E0DC44 /* IoTManager.swift */,
+				4E7D9B6B2B2EF23000C1F402 /* iOSCheckBoxToggleStyle.swift */,
 			);
 			path = MQTTDebug;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7D9B6C2B2EF23000C1F402 /* iOSCheckBoxToggleStyle.swift in Sources */,
 				4E4EE1AF2AE3E8D4006FBE0A /* MessagesView.swift in Sources */,
 				4E4EE1B52AE3ED8B006FBE0A /* UIWrapper.swift in Sources */,
 				4EFF960E2B21F460002ADFE5 /* TopicGroupView.swift in Sources */,

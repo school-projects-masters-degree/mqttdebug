@@ -31,28 +31,6 @@ struct ConnectionStatusView: View {
                         mqttSettings.isConnected = false
                         
                     }
-                    /*.onTapGesture {
-                        print("Tap gesture recognized")
-                        if mqttSettings.settingsChanged {
-                            print("Settings have changed. Attempting to reconnect...")
-                            
-                            iotManager.disconnect()
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                iotManager.connectToServer()
-                            }
-                            mqttSettings.settingsChanged = false
-                        }
-                    }*/
-                /*
-                if mqttSettings.settingsChanged {
-                    Text("Settings Changed - Tap Here To Reconnect")
-                        .frame(maxWidth: .infinity)
-                        .padding([.vertical], 5)
-                        .foregroundColor(.white)
-                        .background(Color.orange)
-                        .fontWeight(.semibold)
-                }
-                 */
             } else {
                 Text("Please update your settings")
                     .frame(maxWidth: .infinity)

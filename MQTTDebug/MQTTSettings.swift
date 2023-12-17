@@ -33,6 +33,7 @@ class MQTTSettings: ObservableObject {
     private let favoritesKey = "FavoriteTopics"
     private let MAX_MESSAGE_COUNT = 20
     init() {
+        loadSettings()
         loadFavoriteMessages()
     }
     
@@ -109,12 +110,23 @@ class MQTTSettings: ObservableObject {
         }
     }
     
+    // Allow max 20 Messages
     func addMessage(_ message: MQTTMessage) {
         receivedMessages.append(message)
         
         if receivedMessages.count > MAX_MESSAGE_COUNT {
             receivedMessages.removeFirst()
         }
+    }
+    
+    
+    func loadSettings() {
+        brokerIP = UserDefaults.standard.string(forKey: "brokerIP") ?? "10.55.200.204"
+        portNumber = UserDefaults.standard.integer(forKey: "portNumber")
+        if portNumber == 0 { portNumber = 1883 } // Default port if not set
+        username = UserDefaults.standard.string(forKey: "username") ?? ""
+        password = UserDefaults.standard.string(forKey: "password") ?? ""
+        topic = UserDefaults.standard.string(forKey: "topic") ?? "#"
     }
     
 }

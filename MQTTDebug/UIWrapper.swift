@@ -34,20 +34,17 @@ struct UIWrapper: View {
         }
         TabView(selection: $selectedTab) {
             MessagesView(mqttSettings: mqttSettings)
-                .tabItem { Label( "home", systemImage: "house")
+                .tabItem { Label( "", systemImage: "house")
                     .foregroundColor(Color("DarkIcons")).fontWeight(.bold) }.tag(1)
             
             SettingsView(mqttSettings: mqttSettings)
-                .tabItem { Label("Settings", systemImage: "gearshape.fill") }.tag(2)
+                .tabItem { Label("", systemImage: "gearshape.fill") }.tag(2)
             
             if mqttSettings.isFavoriteTabVisible {
                 SubscribedView(mqttSettings: mqttSettings).tabItem {
-                    Label("Favorites", systemImage: "bell.fill")
+                    Label("", systemImage: "bell.fill")
                 }.tag(3)
             }
-            
-            
-            
         }
         
         .onAppear {

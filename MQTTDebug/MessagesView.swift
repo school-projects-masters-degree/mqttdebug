@@ -98,7 +98,6 @@ struct MessagesView: View {
             mqttSettings.saveFavoriteMessages()
         }
         print("Toggled favorite status for message: \(message.id)")
-        
     }
     
 }
