@@ -9,7 +9,7 @@ backgroundColor: #fff
 
 # **MQTTDebug**
 
-Aldin Cimpo, Martin Brandl
+Aldin Cimpo, Martin Brandl, Lukas Riegler
 
 ---
 
