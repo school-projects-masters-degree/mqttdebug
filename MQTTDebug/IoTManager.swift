@@ -28,18 +28,11 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
         
         mqtt = CocoaMQTT(clientID: clientID, host: serverURL, port: serverPort)
         mqtt.delegate = self
-        //mqtt.username = "ben"
-        //mqtt.password = "1234"
-        // mqtt.allowUntrustCACertificate = true
-        
-        //mqtt.connect()
     }
     
-    // TODO: Trigger reconnect upon change
     func configure(clientID: String, serverURL: String, serverPort: UInt16, username:String?, password: String?){
         mqtt.host = serverURL
         // Port is already validated, no need to check
-        
         mqtt.port = serverPort
         mqtt.username = username
         mqtt.password = password
@@ -75,8 +68,14 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
         mqttSettings.saveFavoriteMessages()
     }
     
-    // MARK: - CocoaMQTTDelegate methods
+    func subscribeToTopic(topic: String) {
+        mqtt.subscribe(topic)
+    }
     
+    func publishData(topic: String, message: String) {
+        mqtt.publish(topic, withString: message, qos: .qos1)
+    }
+    // MARK: - CocoaMQTTDelegate methods
     func mqtt(_ mqtt: CocoaMQTT, didConnectAck ack: CocoaMQTTConnAck) {
         switch ack {
         case .accept:
@@ -163,12 +162,6 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
     }
 }
 
-extension IoTManager {
-    func subscribeToTopic(topic: String) {
-        mqtt.subscribe(topic)
-    }
+   
     
-    func publishData(topic: String, message: String) {
-        mqtt.publish(topic, withString: message, qos: .qos1)
-    }
-}
+

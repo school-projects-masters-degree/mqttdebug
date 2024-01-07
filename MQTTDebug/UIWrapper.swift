@@ -19,9 +19,8 @@ struct UIWrapper: View {
         let mqttSettings = MQTTSettings()
         _mqttSettings = StateObject(wrappedValue: mqttSettings)
         _iotManager = StateObject(wrappedValue: IoTManager(mqttSettings: mqttSettings))
-        
-        
     }
+    
     var body: some View {
         VStack(spacing: 0.0) {
             Text("MQTTDebugger")
@@ -34,32 +33,26 @@ struct UIWrapper: View {
         }
         TabView(selection: $selectedTab) {
             MessagesView(mqttSettings: mqttSettings)
-                .tabItem { Label( "", systemImage: "house")
-                    .foregroundColor(Color("DarkIcons")).fontWeight(.bold) }.tag(1)
+                .tabItem {
+                    Image(systemName: "house")
+                }.tag(1)
             
             SettingsView(mqttSettings: mqttSettings)
-                .tabItem { Label("", systemImage: "gearshape.fill") }.tag(2)
+                .tabItem {
+                    Image(systemName: "gearshape.fill")
+                }.tag(2)
             
             if mqttSettings.isFavoriteTabVisible {
                 SubscribedView(mqttSettings: mqttSettings).tabItem {
-                    Label("", systemImage: "bell.fill")
+                    Image(systemName: "bell.fill")
                 }.tag(3)
             }
         }
         
         .onAppear {
-            if isValidPort(mqttSettings.portNumber) {
-                iotManager.configure(clientID: "MQTTDebug-", serverURL: mqttSettings.brokerIP, serverPort: UInt16(mqttSettings.portNumber), username: mqttSettings.username, password: mqttSettings.password)
-                UITabBar.appearance().backgroundColor = UIColor(Color("MainColor"))
-            } else {
-                alertMessage = "Invalid Port number. Please use a number between 0 and 65535"
-                showAlert = true
-            }
-            
+            UITabBar.appearance().backgroundColor = UIColor(Color("TabViewColor"))
         }
-        .alert(isPresented: $showAlert) {
-            Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("Ok")))
-        }
+        
     }
     func isValidPort(_ port: Int) -> Bool {
         return (0...65535).contains(port)

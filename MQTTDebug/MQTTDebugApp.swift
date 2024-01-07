@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct MQTTDebugApp: App {
     var body: some Scene {
+        // Scene erwartet sich eine WindowGroup
         WindowGroup {
             ContentView()
         }

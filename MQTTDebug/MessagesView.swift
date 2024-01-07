@@ -71,6 +71,8 @@ struct MessagesView: View {
             }
         }
     }
+                    
+        
     private func connectToServer() {
         print("Attempting to connect to server")
         

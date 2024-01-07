@@ -17,7 +17,7 @@ struct TopicGroupView: View {
     
     private var borderColor: Color {
         guard let mostRecentMessage = messages.max(by: { $0.timestamp < $1.timestamp }) else {
-            return Color.gray  // No messages, no border
+            return Color.gray
         }
         
         let timeInterval = currentDate.timeIntervalSince(mostRecentMessage.timestamp)
@@ -34,7 +34,7 @@ struct TopicGroupView: View {
         case 10..<30:  // Older than 10 sec
             // Medium Gray
             return 0.5
-        default:  // Older than 2 minutes
+        default:  // Older than 30 sec
             // Lighter Gray
             return 0.8
         }

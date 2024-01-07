@@ -5,12 +5,10 @@ struct SubscribedView: View {
 
     private var groupedMessages: [String: [MQTTSettings.MQTTMessage]] {
         Dictionary(grouping: mqttSettings.receivedMessages.filter { $0.isFavorite }) { $0.topic }
+        
     }
 
     var body: some View {
-        if groupedMessages.isEmpty{
-            Text("No Messages Saved.")
-        }
         List {
             ForEach(groupedMessages.keys.sorted(), id: \.self) { topic in
                 Section(header: Text(topic)) {

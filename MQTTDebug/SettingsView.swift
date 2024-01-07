@@ -30,6 +30,7 @@ struct SettingsView: View {
                         UserDefaults.standard.set(mqttSettings.username, forKey: "username")
                     }
                 // Use Secure Field for Password
+                // Trotzdem Plaintext
                 SecureField("Password", text: $mqttSettings.password)
                     .onChange(of: mqttSettings.password) {
                         mqttSettings.settingsChanged = true

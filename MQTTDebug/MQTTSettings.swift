@@ -9,6 +9,7 @@ import Foundation
 
 class MQTTSettings: ObservableObject {
     
+    // All messages
     @Published var receivedMessages: [MQTTMessage] = []
     
     @Published var brokerIP: String = "10.55.200.204"
@@ -62,6 +63,7 @@ class MQTTSettings: ObservableObject {
     
     func saveFavoriteMessages() {
         favoriteMessages = receivedMessages.filter { $0.isFavorite }
+        // Old version: JSON Serialize
         if let encoded = try? JSONEncoder().encode(favoriteMessages) {
             UserDefaults.standard.set(encoded, forKey: favoritedMessagesKey)
         }
@@ -75,7 +77,7 @@ class MQTTSettings: ObservableObject {
            let savedMessages = try? JSONDecoder().decode([MQTTMessage].self, from: data) {
             print("Found data for favorite messages")
             
-            // Merge with existing messages or replace, as per your logic
+            // Sync Delete operation and Saving Operation on both sides
             favoriteMessages = savedMessages
             receivedMessages = savedMessages
             
