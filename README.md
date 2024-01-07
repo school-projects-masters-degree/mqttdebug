@@ -9,7 +9,7 @@ backgroundColor: #fff
 
 # **MQTTDebug**
 
-Aldin Cimpo, Martin Brandl
+Aldin Cimpo, Martin Brandl, Lukas Riegler
 
 ---
 
@@ -43,6 +43,37 @@ Aldin Cimpo, Martin Brandl
 * Connection Status
 * Service (stay subscribed in the background)
 * Caching
+
+---
+
+
+---
+
+# Launch mqtt with password 
+tested on macOS
+
+```bash
+mosquitto_passwd -c passwd.txt username
+```
+
+nvim /opt/homebrew/etc/mosquitto/mosquitto.conf
+
+```bash
+allow_anonymous false
+listener 1883
+
+password_file /Users/alsjourney/Desktop/passwd.txt 
+```
+
+launch directly or as service
+```bash
+mosquitto -c /opt/homebrew/etc/mosquitto/mosquitto.conf
+
+brew services start mosquitto
+```
+
+edit file here
+
 
 ---
 
