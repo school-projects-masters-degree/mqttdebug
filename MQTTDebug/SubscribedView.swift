@@ -1,11 +1,10 @@
 import SwiftUI
 
 struct SubscribedView: View {
-    @ObservedObject var mqttSettings: MQTTSettings  // Expect mqttSettings to be passed in
+    @ObservedObject var mqttSettings: MQTTSettings  
 
     private var groupedMessages: [String: [MQTTSettings.MQTTMessage]] {
         Dictionary(grouping: mqttSettings.receivedMessages.filter { $0.isFavorite }) { $0.topic }
-        
     }
 
     var body: some View {

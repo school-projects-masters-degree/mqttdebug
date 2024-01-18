@@ -32,7 +32,7 @@ class MQTTSettings: ObservableObject {
     var onFavoritesChanged: (() -> Void)?
     
     private let favoritesKey = "FavoriteTopics"
-    private let MAX_MESSAGE_COUNT = 20
+    private let MAX_TOPIC_COUNT = 20
     init() {
         loadSettings()
         loadFavoriteMessages()
@@ -56,10 +56,8 @@ class MQTTSettings: ObservableObject {
         }
     }
     
-    
     // Key for storing favorite messages
     private let favoritedMessagesKey = "FavoritedMessages"
-    
     
     func saveFavoriteMessages() {
         favoriteMessages = receivedMessages.filter { $0.isFavorite }
@@ -68,7 +66,6 @@ class MQTTSettings: ObservableObject {
             UserDefaults.standard.set(encoded, forKey: favoritedMessagesKey)
         }
         print("Saving favorite messages: \(favoriteMessages.count)")
-        
         onFavoritesChanged?()
     }
     
@@ -113,10 +110,11 @@ class MQTTSettings: ObservableObject {
     }
     
     // Allow max 20 Messages
+    // FIFO principle
     func addMessage(_ message: MQTTMessage) {
         receivedMessages.append(message)
         
-        if receivedMessages.count > MAX_MESSAGE_COUNT {
+        if receivedMessages.count > MAX_TOPIC_COUNT {
             receivedMessages.removeFirst()
         }
     }

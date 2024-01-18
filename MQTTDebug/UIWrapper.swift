@@ -54,7 +54,4 @@ struct UIWrapper: View {
         }
         
     }
-    func isValidPort(_ port: Int) -> Bool {
-        return (0...65535).contains(port)
-    }
 }

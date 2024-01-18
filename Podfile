@@ -8,14 +8,4 @@ target 'MQTTDebug' do
   use_frameworks!
   pod 'CocoaMQTT'
   pod 'CocoaMQTT/WebSockets'
-  # Pods for MQTTDebug
-  target 'MQTTDebugTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'MQTTDebugUITests' do
-    # Pods for testing
-  end
-
 end

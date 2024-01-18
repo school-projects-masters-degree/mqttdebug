@@ -13,6 +13,11 @@ struct MessagesView: View {
     @StateObject private var iotManager: IoTManager
     @State private var connectionMessage: String = ""
     
+    init(mqttSettings: MQTTSettings) {
+        self.mqttSettings = mqttSettings
+        _iotManager = StateObject(wrappedValue: IoTManager(mqttSettings: mqttSettings))
+    }
+    
     private var groupedMessages: [String: [MQTTSettings.MQTTMessage]] {
         let sortedMessages = mqttSettings.receivedMessages.sorted { $0.timestamp > $1.timestamp }
         let truncatedMessages = sortedMessages.map { message -> MQTTSettings.MQTTMessage in
@@ -29,11 +34,6 @@ struct MessagesView: View {
         return Dictionary(grouping: truncatedMessages, by: { $0.topic }).mapValues { Array($0.prefix(10)) }
     }
     
-    
-    init(mqttSettings: MQTTSettings) {
-        self.mqttSettings = mqttSettings
-        _iotManager = StateObject(wrappedValue: IoTManager(mqttSettings: mqttSettings))
-    }
     var body: some View {
         VStack {
             if mqttSettings.isConnected {
@@ -47,14 +47,10 @@ struct MessagesView: View {
                 
             } else {
                 VStack {
-                    if !mqttSettings.isConnected || mqttSettings.settingsChanged {
-                        // Additional UI components as needed
-                    }
                     if mqttSettings.settingsChanged {
                         Text("Settings have changed. Please reconnect.")
                             .foregroundColor(.orange)
                     }
-                    
                     Button("Connect") {
                         connectToServer()
                     }.buttonStyle(.bordered)
@@ -103,9 +99,3 @@ struct MessagesView: View {
     }
     
 }
-/*
- #Preview {
- MessagesView()
- }
- */
-

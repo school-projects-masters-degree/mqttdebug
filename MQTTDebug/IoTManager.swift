@@ -112,6 +112,7 @@ class IoTManager: NSObject,ObservableObject, CocoaMQTTDelegate  {
             if let messageString = message.string {
                 let mqttMessage = MQTTSettings.MQTTMessage(topic: message.topic, message: messageString, timestamp: Date(), isNew: true)
                 
+                // UI gets updated:
                 await MainActor.run {
                     self.mqttSettings.addMessage(mqttMessage)
                 }

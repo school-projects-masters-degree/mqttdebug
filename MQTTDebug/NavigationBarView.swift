@@ -23,7 +23,3 @@ struct NavigationBarView: View {
         }
     }
 }
-
-#Preview {
-    NavigationBarView()
-}
