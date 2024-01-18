@@ -21,9 +21,6 @@
 		4EBFE81D2ADAA48B005AB4DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFE81C2ADAA48B005AB4DE /* ContentView.swift */; };
 		4EBFE81F2ADAA48D005AB4DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EBFE81E2ADAA48D005AB4DE /* Assets.xcassets */; };
 		4EBFE8222ADAA48D005AB4DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EBFE8212ADAA48D005AB4DE /* Preview Assets.xcassets */; };
-		4EBFE82C2ADAA48D005AB4DE /* MQTTDebugTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFE82B2ADAA48D005AB4DE /* MQTTDebugTests.swift */; };
-		4EBFE8362ADAA48D005AB4DE /* MQTTDebugUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFE8352ADAA48D005AB4DE /* MQTTDebugUITests.swift */; };
-		4EBFE8382ADAA48D005AB4DE /* MQTTDebugUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBFE8372ADAA48D005AB4DE /* MQTTDebugUITestsLaunchTests.swift */; };
 		4EFF960E2B21F460002ADFE5 /* TopicGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF960D2B21F460002ADFE5 /* TopicGroupView.swift */; };
 		767FEE0FF6B97FEA866C5083 /* Pods_MQTTDebug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C360D04A4AEEE00B2C07EBC2 /* Pods_MQTTDebug.framework */; };
 		B7650ECA0B565187C113F17D /* Pods_MQTTDebugTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C298AAD40F6306E585995D53 /* Pods_MQTTDebugTests.framework */; };
@@ -65,10 +62,7 @@
 		4EBFE81E2ADAA48D005AB4DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EBFE8212ADAA48D005AB4DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4EBFE8272ADAA48D005AB4DE /* MQTTDebugTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MQTTDebugTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4EBFE82B2ADAA48D005AB4DE /* MQTTDebugTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTDebugTests.swift; sourceTree = "<group>"; };
 		4EBFE8312ADAA48D005AB4DE /* MQTTDebugUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MQTTDebugUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4EBFE8352ADAA48D005AB4DE /* MQTTDebugUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTDebugUITests.swift; sourceTree = "<group>"; };
-		4EBFE8372ADAA48D005AB4DE /* MQTTDebugUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTDebugUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4EFF960D2B21F460002ADFE5 /* TopicGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicGroupView.swift; sourceTree = "<group>"; };
 		66C209A746B33E22B1A40297 /* Pods_MQTTDebug_MQTTDebugUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MQTTDebug_MQTTDebugUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A15B0141D59A32C15752271 /* Pods-MQTTDebugTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTTDebugTests.debug.xcconfig"; path = "Target Support Files/Pods-MQTTDebugTests/Pods-MQTTDebugTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -111,8 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				4EBFE8192ADAA48B005AB4DE /* MQTTDebug */,
-				4EBFE82A2ADAA48D005AB4DE /* MQTTDebugTests */,
-				4EBFE8342ADAA48D005AB4DE /* MQTTDebugUITests */,
 				4EBFE8182ADAA48B005AB4DE /* Products */,
 				FCF70F7B2D00464CBEE52BE1 /* Pods */,
 				87ECA280CFF6651BCD6C82EC /* Frameworks */,
@@ -157,23 +149,6 @@
 				4EBFE8212ADAA48D005AB4DE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		4EBFE82A2ADAA48D005AB4DE /* MQTTDebugTests */ = {
-			isa = PBXGroup;
-			children = (
-				4EBFE82B2ADAA48D005AB4DE /* MQTTDebugTests.swift */,
-			);
-			path = MQTTDebugTests;
-			sourceTree = "<group>";
-		};
-		4EBFE8342ADAA48D005AB4DE /* MQTTDebugUITests */ = {
-			isa = PBXGroup;
-			children = (
-				4EBFE8352ADAA48D005AB4DE /* MQTTDebugUITests.swift */,
-				4EBFE8372ADAA48D005AB4DE /* MQTTDebugUITestsLaunchTests.swift */,
-			);
-			path = MQTTDebugUITests;
 			sourceTree = "<group>";
 		};
 		87ECA280CFF6651BCD6C82EC /* Frameworks */ = {
@@ -456,7 +431,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EBFE82C2ADAA48D005AB4DE /* MQTTDebugTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,8 +438,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EBFE8382ADAA48D005AB4DE /* MQTTDebugUITestsLaunchTests.swift in Sources */,
-				4EBFE8362ADAA48D005AB4DE /* MQTTDebugUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

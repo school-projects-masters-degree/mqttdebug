@@ -12,7 +12,7 @@ class MQTTSettings: ObservableObject {
     // All messages
     @Published var receivedMessages: [MQTTMessage] = []
     
-    @Published var brokerIP: String = "10.55.200.204"
+    @Published var brokerIP: String = ""
     @Published var portNumber: Int = 1883 // Default port
     @Published var username: String = ""
     @Published var password: String = ""
@@ -123,7 +123,7 @@ class MQTTSettings: ObservableObject {
     
     
     func loadSettings() {
-        brokerIP = UserDefaults.standard.string(forKey: "brokerIP") ?? "10.55.200.204"
+        brokerIP = UserDefaults.standard.string(forKey: "brokerIP") ?? ""
         portNumber = UserDefaults.standard.integer(forKey: "portNumber")
         if portNumber == 0 { portNumber = 1883 } // Default port if not set
         username = UserDefaults.standard.string(forKey: "username") ?? ""
