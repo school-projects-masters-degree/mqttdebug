@@ -72,7 +72,13 @@ mosquitto -c /opt/homebrew/etc/mosquitto/mosquitto.conf
 brew services start mosquitto
 ```
 
-edit file here
+### Run the app
+```bash
+pod install
+```
+
+### Min. sdk error fix
+https://stackoverflow.com/questions/77139617/clang-error-sdk-does-not-contain-libarclite-at-the-path
 
 
 ---
