@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38709D4F7E2CB03C13BED9BA /* Pods_MQTTDebug_MQTTDebugUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C209A746B33E22B1A40297 /* Pods_MQTTDebug_MQTTDebugUITests.framework */; };
 		4E16B6102B05FA64005B8FCA /* MQTTSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E16B60F2B05FA64005B8FCA /* MQTTSettings.swift */; };
 		4E3958CC2AFFA6C900E0DC44 /* IoTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3958CB2AFFA6C900E0DC44 /* IoTManager.swift */; };
 		4E4EE1AB2AE3E243006FBE0A /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4EE1AA2AE3E243006FBE0A /* NavigationBarView.swift */; };
@@ -22,7 +21,6 @@
 		4EBFE8222ADAA48D005AB4DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EBFE8212ADAA48D005AB4DE /* Preview Assets.xcassets */; };
 		4EFF960E2B21F460002ADFE5 /* TopicGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF960D2B21F460002ADFE5 /* TopicGroupView.swift */; };
 		767FEE0FF6B97FEA866C5083 /* Pods_MQTTDebug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C360D04A4AEEE00B2C07EBC2 /* Pods_MQTTDebug.framework */; };
-		B7650ECA0B565187C113F17D /* Pods_MQTTDebugTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C298AAD40F6306E585995D53 /* Pods_MQTTDebugTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		397F0456FB204C01649B653B /* Pods-MQTTDebug-MQTTDebugUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTTDebug-MQTTDebugUITests.debug.xcconfig"; path = "Target Support Files/Pods-MQTTDebug-MQTTDebugUITests/Pods-MQTTDebug-MQTTDebugUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4195B900C1BA28863BAE6B84 /* Pods-MQTTDebug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTTDebug.debug.xcconfig"; path = "Target Support Files/Pods-MQTTDebug/Pods-MQTTDebug.debug.xcconfig"; sourceTree = "<group>"; };
 		4E16B60F2B05FA64005B8FCA /* MQTTSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTSettings.swift; sourceTree = "<group>"; };
 		4E3958CB2AFFA6C900E0DC44 /* IoTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoTManager.swift; sourceTree = "<group>"; };
@@ -62,13 +59,8 @@
 		4EBFE8272ADAA48D005AB4DE /* MQTTDebugTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MQTTDebugTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EBFE8312ADAA48D005AB4DE /* MQTTDebugUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MQTTDebugUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EFF960D2B21F460002ADFE5 /* TopicGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicGroupView.swift; sourceTree = "<group>"; };
-		66C209A746B33E22B1A40297 /* Pods_MQTTDebug_MQTTDebugUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MQTTDebug_MQTTDebugUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A15B0141D59A32C15752271 /* Pods-MQTTDebugTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTTDebugTests.debug.xcconfig"; path = "Target Support Files/Pods-MQTTDebugTests/Pods-MQTTDebugTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B926F5506CAC089AA01E0E06 /* Pods-MQTTDebugTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTTDebugTests.release.xcconfig"; path = "Target Support Files/Pods-MQTTDebugTests/Pods-MQTTDebugTests.release.xcconfig"; sourceTree = "<group>"; };
 		C1DD0CF68A153FE763B0BBBD /* Pods-MQTTDebug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTTDebug.release.xcconfig"; path = "Target Support Files/Pods-MQTTDebug/Pods-MQTTDebug.release.xcconfig"; sourceTree = "<group>"; };
-		C298AAD40F6306E585995D53 /* Pods_MQTTDebugTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MQTTDebugTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C360D04A4AEEE00B2C07EBC2 /* Pods_MQTTDebug.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MQTTDebug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB212BAE07B9BEC93E9C5B71 /* Pods-MQTTDebug-MQTTDebugUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MQTTDebug-MQTTDebugUITests.release.xcconfig"; path = "Target Support Files/Pods-MQTTDebug-MQTTDebugUITests/Pods-MQTTDebug-MQTTDebugUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7650ECA0B565187C113F17D /* Pods_MQTTDebugTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +83,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38709D4F7E2CB03C13BED9BA /* Pods_MQTTDebug_MQTTDebugUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,8 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				C360D04A4AEEE00B2C07EBC2 /* Pods_MQTTDebug.framework */,
-				66C209A746B33E22B1A40297 /* Pods_MQTTDebug_MQTTDebugUITests.framework */,
-				C298AAD40F6306E585995D53 /* Pods_MQTTDebugTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,10 +151,6 @@
 			children = (
 				4195B900C1BA28863BAE6B84 /* Pods-MQTTDebug.debug.xcconfig */,
 				C1DD0CF68A153FE763B0BBBD /* Pods-MQTTDebug.release.xcconfig */,
-				397F0456FB204C01649B653B /* Pods-MQTTDebug-MQTTDebugUITests.debug.xcconfig */,
-				EB212BAE07B9BEC93E9C5B71 /* Pods-MQTTDebug-MQTTDebugUITests.release.xcconfig */,
-				8A15B0141D59A32C15752271 /* Pods-MQTTDebugTests.debug.xcconfig */,
-				B926F5506CAC089AA01E0E06 /* Pods-MQTTDebugTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -197,7 +181,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4EBFE83E2ADAA48D005AB4DE /* Build configuration list for PBXNativeTarget "MQTTDebugTests" */;
 			buildPhases = (
-				59BD7F2C43B90D55935CF036 /* [CP] Check Pods Manifest.lock */,
 				4EBFE8232ADAA48D005AB4DE /* Sources */,
 				4EBFE8242ADAA48D005AB4DE /* Frameworks */,
 				4EBFE8252ADAA48D005AB4DE /* Resources */,
@@ -216,11 +199,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4EBFE8412ADAA48D005AB4DE /* Build configuration list for PBXNativeTarget "MQTTDebugUITests" */;
 			buildPhases = (
-				593B3076F8D13C39C83533B8 /* [CP] Check Pods Manifest.lock */,
 				4EBFE82D2ADAA48D005AB4DE /* Sources */,
 				4EBFE82E2ADAA48D005AB4DE /* Frameworks */,
 				4EBFE82F2ADAA48D005AB4DE /* Resources */,
-				4B37C8E4BFB5B1027E3C623F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -317,67 +298,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MQTTDebug/Pods-MQTTDebug-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4B37C8E4BFB5B1027E3C623F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MQTTDebug-MQTTDebugUITests/Pods-MQTTDebug-MQTTDebugUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MQTTDebug-MQTTDebugUITests/Pods-MQTTDebug-MQTTDebugUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MQTTDebug-MQTTDebugUITests/Pods-MQTTDebug-MQTTDebugUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		593B3076F8D13C39C83533B8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MQTTDebug-MQTTDebugUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		59BD7F2C43B90D55935CF036 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MQTTDebugTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		70A99C3047C1A8D1261E56C1 /* [CP] Check Pods Manifest.lock */ = {
@@ -636,7 +556,6 @@
 		};
 		4EBFE83F2ADAA48D005AB4DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A15B0141D59A32C15752271 /* Pods-MQTTDebugTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -656,7 +575,6 @@
 		};
 		4EBFE8402ADAA48D005AB4DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B926F5506CAC089AA01E0E06 /* Pods-MQTTDebugTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -676,7 +594,6 @@
 		};
 		4EBFE8422ADAA48D005AB4DE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 397F0456FB204C01649B653B /* Pods-MQTTDebug-MQTTDebugUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -694,7 +611,6 @@
 		};
 		4EBFE8432ADAA48D005AB4DE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB212BAE07B9BEC93E9C5B71 /* Pods-MQTTDebug-MQTTDebugUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
